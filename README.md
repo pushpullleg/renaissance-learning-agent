@@ -65,5 +65,5 @@ Hackathon_Fall2025/
 
 ---
 
-Thanks for checking out this POC. If you adapt it for other educational initiatives, please credit the original Renaissance EdTech + MKTBA Hackathon submission. 🎓
+Thanks for checking out this POC. Feel free to adapt it for your use. 
 
