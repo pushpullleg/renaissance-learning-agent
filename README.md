@@ -1,6 +1,6 @@
 # Renaissance Adaptive Learning Agent (POC)
 
-This repository contains the Streamlit proof-of-concept that I built for the **Renaissance EdTech Platform** and submitted to the **MKTBA Hackathon – Fall 2025**. It showcases an **AI adaptive learning agent** that guides Business Analytics and Data Engineering learners through a branded experience inspired by Renaissance’s design language.
+This repository contains the Streamlit proof-of-concept that I built for the **Renaissance EdTech Platform** and submitted to the **MKTBA Hackathon – Fall 2025**. It showcases an **AI adaptive learning agent** that guides Business Analytics and Marketing learners through a branded experience inspired by Renaissance’s design language.
 
 > ⚠️ **POC disclaimer:** This codebase is shared for educational purposes. It is not a production-ready product—there is no Supabase backend, vector database, or external orchestration. Everything runs locally inside Streamlit to demonstrate the concept quickly.
 
