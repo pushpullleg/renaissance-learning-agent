@@ -36,6 +36,36 @@ The entire experience runs offline except for OpenAI calls. No databases or thir
 
 ---
 
+## Demo
+
+```
+🎓 Renaissance Adaptive Learning Agent
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Landing Page] → Choose your path: Business Analytics | Marketing
+
+  📊 Business Analytics selected
+  └── Roadmap: Data Engineer → Data Analyst → BI Developer
+
+[Data Engineer Roadmap]
+  ✅ Python Fundamentals ████████████ 100%
+  🔄 SQL & Databases     ████████░░░░  67%
+  ⬚  ETL Pipelines       ░░░░░░░░░░░░   0%
+
+[AI Tutor Panel]
+  You: "Explain the difference between OLTP and OLAP"
+  Tutor: "Great question! OLTP handles day-to-day transactions
+         like processing orders. OLAP is optimized for complex
+         analytical queries across large datasets..."
+
+[Analytics Panel]
+  Sessions: 14 | Avg Duration: 23 min | Mastery: 67%
+  Strengths: Python, Data Modeling
+  Focus Areas: SQL Joins, Window Functions
+```
+
+---
+
 ## Project Structure
 
 ```
