@@ -1,99 +1,41 @@
-# Renaissance Adaptive Learning Agent (POC)
+# renaissance-learning-agent
 
-This repository contains the Streamlit proof-of-concept that I built for the **Renaissance EdTech Platform** and submitted to the **MKTBA Hackathon – Fall 2025**. It showcases an **AI adaptive learning agent** that guides Business Analytics and Marketing learners through a branded experience inspired by Renaissance’s design language.
+A Streamlit app that walks learners through a personalized career roadmap, with an AI tutor and a live analytics panel. Built for the Business Analytics and Data Engineering tracks.
 
-> ⚠️ **POC disclaimer:** This codebase is shared for educational purposes. It is not a production-ready product—there is no backend, vector database, or external orchestration. Everything runs locally inside Streamlit and JSON file for memort to demonstrate the concept quickly.
+The tutor is powered by OpenAI. The analytics panel reads from a local event log so it works without any external services. Everything runs inside Streamlit — no backend, no database required.
 
----
+## Running locally
 
-## What’s Included
-
-- **Renaissance-themed UI flow**: landing, onboarding, roadmap selection, and a Data Engineer roadmap page (only the Business Analytics → Data Engineer branch is interactive today).
-- **Adaptive AI Tutor panel**: lightweight OpenAI-powered interaction with a mock analytics log.
-- **Learning analytics panel**: derives insights from sample tutor events stored on disk.
-- **Self-contained assets**: logos, hero images, and profile art required for the demo.
-
----
-
-## Run It Locally
-
-1. **Install Python 3.9+**
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Add your OpenAI key (optional but recommended for the tutor panel)**
-   ```env
-   # .env
-   OPENAI_API_KEY=sk-your-key
-   ```
-4. **Launch Streamlit**
-   ```bash
-   streamlit run app/main_app.py
-   ```
-
-The entire experience runs offline except for OpenAI calls. No databases or third-party services are required to recreate the demo.
-
----
-
-## Demo
-
-```
-🎓 Renaissance Adaptive Learning Agent
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-[Landing Page] → Choose your path: Business Analytics | Marketing
-
-  📊 Business Analytics selected
-  └── Roadmap: Data Engineer → Data Analyst → BI Developer
-
-[Data Engineer Roadmap]
-  ✅ Python Fundamentals ████████████ 100%
-  🔄 SQL & Databases     ████████░░░░  67%
-  ⬚  ETL Pipelines       ░░░░░░░░░░░░   0%
-
-[AI Tutor Panel]
-  You: "Explain the difference between OLTP and OLAP"
-  Tutor: "Great question! OLTP handles day-to-day transactions
-         like processing orders. OLAP is optimized for complex
-         analytical queries across large datasets..."
-
-[Analytics Panel]
-  Sessions: 14 | Avg Duration: 23 min | Mastery: 67%
-  Strengths: Python, Data Modeling
-  Focus Areas: SQL Joins, Window Functions
+```bash
+pip install -r requirements.txt
 ```
 
----
-
-## Project Structure
+Add your OpenAI key if you want the tutor to respond (optional — the rest of the app works without it):
 
 ```
-Hackathon_Fall2025/
-├── README.md
-├── requirements.txt
-├── .env.example
-├── app/
-│   ├── main_app.py          # Navigation + global state
-│   ├── components/          # AI tutor + analytics panels
-│   ├── pages/               # Landing, onboarding, roadmap, DE roadmap
-│   └── data/tutor_events.json
-└── assets/                  # Branding + imagery
+# .env
+OPENAI_API_KEY=sk-your-key
 ```
 
-- `app/data/tutor_events.json` contains pre-populated tutor logs so the analytics tab renders immediately; delete it to reset.
-- `assets/` holds all Renaissance-branded visuals referenced by the pages.
+```bash
+streamlit run app/main_app.py
+```
 
----
+## Structure
 
-## Tips for Remixing
+```
+app/
+├── main_app.py           # navigation and global state
+├── components/           # tutor and analytics panels
+├── pages/                # landing, onboarding, roadmap pages
+└── data/tutor_events.json
+assets/                   # images and branding
+```
 
-- Swap out logos or imagery by replacing files inside `assets/`.
-- Adjust roadmap content or copy within the corresponding file in `app/pages/`.
-- Extend the tutor or analytics experiences inside `app/components/`; both modules are decoupled from external services.
-- If you add other roadmaps, update the state machine in `app/main_app.py`; right now only the Business Analytics → Data Engineer path is wired end-to-end.
+`app/data/tutor_events.json` contains pre-populated events so the analytics tab renders on first load. Delete it to start fresh.
 
----
+Only the Business Analytics → Data Engineer path is wired end-to-end. Other roadmap branches exist in the UI but are not yet interactive.
 
-Thanks for checking out this POC. Feel free to adapt it for your use. 
+## License
 
+MIT
